@@ -26,6 +26,8 @@ def restart():
 
 turtle.shape("turtle")
 
+turtle.stamp()
+
 turtle.onkey(up,'w')
 turtle.onkey(left,'a')
 turtle.onkey(down,'s')
