@@ -7,7 +7,7 @@ from boy import Boy
 from ball import Ball
 
 boy = None
-# grass = None
+grasses = None
 # ball = None
 
 def handle_events():
@@ -22,14 +22,24 @@ def handle_events():
 
 
 # 초기화
+# DRILL #12
+# case 1. grass1, grass2 로 만들기
+# case 2. []로 만들기 -> 이걸로 만들자
+# case 3. generator -> 사용하면 될거같기도 하고
+# case 4. grass.py 수정해서 y값 입력받아서 만들기.
 def enter():
     global boy
-    # global grass
+    global grasses
+    test = 0
     # global ball
     boy = Boy()
-    grass = Grass()
     # ball = Ball()
-    game_world.add_object(grass, 0)
+    grasses = [Grass() for i in range(0, 2, 1)]
+    for grass in grasses:
+        game_world.add_object(grass, test)
+        if test == 2:
+            grass.y -= 20
+        test += 2
     game_world.add_object(boy, 1)
 
 # 종료
